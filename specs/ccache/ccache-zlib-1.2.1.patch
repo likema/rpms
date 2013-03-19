@@ -1,0 +1,56 @@
+diff -Naur ccache-3.1.9.orig/configure ccache-3.1.9/configure
+--- ccache-3.1.9.orig/configure	2013-01-07 00:57:59.000000000 +0800
++++ ccache-3.1.9/configure	2013-03-20 03:07:02.463372843 +0800
+@@ -5396,9 +5396,9 @@
+ fi
+ 
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for zlib >= 1.2.3" >&5
+-$as_echo_n "checking for zlib >= 1.2.3... " >&6; }
+-if ${ccache_cv_zlib_1_2_3+:} false; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for zlib >= 1.2.1" >&5
++$as_echo_n "checking for zlib >= 1.2.1... " >&6; }
++if ${ccache_cv_zlib_1_2_1+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -5408,9 +5408,9 @@
+ main ()
+ {
+ 
+-        #if (ZLIB_VERNUM >= 0x1230)
++        #if (ZLIB_VERNUM >= 0x1210)
+         #else
+-        #error "ZLIB_VERNUM < 0x1230"
++        #error "ZLIB_VERNUM < 0x1210"
+         #endif
+ 
+   ;
+@@ -5418,14 +5418,14 @@
+ }
+ _ACEOF
+ if ac_fn_c_try_compile "$LINENO"; then :
+-  ccache_cv_zlib_1_2_3=yes
++  ccache_cv_zlib_1_2_1=yes
+ else
+-  ccache_cv_zlib_1_2_3=no
++  ccache_cv_zlib_1_2_1=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ccache_cv_zlib_1_2_3" >&5
+-$as_echo "$ccache_cv_zlib_1_2_3" >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ccache_cv_zlib_1_2_1" >&5
++$as_echo "$ccache_cv_zlib_1_2_1" >&6; }
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gzdopen in -lz" >&5
+ $as_echo_n "checking for gzdopen in -lz... " >&6; }
+ if ${ac_cv_lib_z_gzdopen+:} false; then :
+@@ -5466,7 +5466,7 @@
+   true
+ fi
+ 
+-if test $ccache_cv_zlib_1_2_3 = yes && test $ac_cv_lib_z_gzdopen = yes; then
++if test $ccache_cv_zlib_1_2_1 = yes && test $ac_cv_lib_z_gzdopen = yes; then
+     use_bundled_zlib=no
+ else
+     use_bundled_zlib=yes
