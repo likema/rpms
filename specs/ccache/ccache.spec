@@ -4,7 +4,7 @@
 
 Summary: Compiler cache
 Name: ccache
-Version: 3.1.9
+Version: 3.2.1
 Release: 1%{?dist}
 License: GPL
 Group: Development/Tools
@@ -23,7 +23,7 @@ when a compilation can be satisfied from cache. This often results in
 a 5 to 10 times speedup in common compilations.
 
 %prep
-%setup
+%setup -q
 %patch0 -p1
 
 %{__cat} <<'EOF' >ccache.sh
